@@ -4,6 +4,15 @@
     "prettier",
     "prettier/react"
   ],
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "navigator": true,
+    "fetch": true
+  },
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -13,5 +22,20 @@
         ]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
   }
 }
