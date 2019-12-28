@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const Button = styled.button`
   color: #155724;
   font-size: 14px;
-  background-color: #d4edda;
+  background-color: ${({ color }) => color || '#d4edda'};
   border-color: #c3e6cb;
   width: 180px;
   height: 40px;
