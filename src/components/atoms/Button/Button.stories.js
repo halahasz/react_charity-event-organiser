@@ -18,7 +18,7 @@ export const Primary = () => {
     Rainbow: ['red', 'orange', 'etc'],
     None: null,
   };
-  const defaultValue = null;
+  const defaultValue = 'red';
   const groupId = 'GROUP-ID1';
 
   const value = select(label, options, defaultValue, groupId);
@@ -30,7 +30,7 @@ export const Primary = () => {
 };
 
 export const RedButton = () => (
-  <Button red onClick={action('clicked')}>
+  <Button secondary onClick={action('clicked')}>
     Hello Button
   </Button>
 );
