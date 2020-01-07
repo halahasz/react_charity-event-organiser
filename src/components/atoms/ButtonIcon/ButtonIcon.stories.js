@@ -18,8 +18,12 @@ const YellowBackground = styled.div`
 
 storiesOf('ButtonIcon', module)
   .addDecorator(story => <YellowBackground>{story()}</YellowBackground>)
-  .add('Bulb', () => <ButtonIcon icon={bulbIcon} />)
-  .add('Active', () => <ButtonIcon active icon={bulbIcon} />)
+  .add('Bulb', () => (
+    <ButtonIcon color={({ theme }) => theme.social} icon={bulbIcon} />
+  ))
+  .add('Active', () => (
+    <ButtonIcon color={({ theme }) => theme.waitress} icon={bulbIcon} />
+  ))
   .add('Logout', () => <ButtonIcon icon={logoutIcon} />)
   .add('Pen', () => <ButtonIcon icon={penIcon} />)
   .add('Plus', () => <ButtonIcon icon={plusIcon} />);

@@ -1,4 +1,6 @@
 export const theme = {
+  social: '#F2CDCD',
+  waitress: '#F2B59E',
   primary: '#d4edda',
   secondary: '#f8d7da',
   tertiary: 'hsl(106, 47%, 64%)',
