@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Button = styled.button`
   color: #155724;
@@ -11,14 +11,6 @@ const Button = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   padding: 0;
-
-  ${({ secondary }) =>
-    secondary &&
-    css`
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    `}
 `;
 
 export default Button;
