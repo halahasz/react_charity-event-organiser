@@ -7,6 +7,7 @@ const ButtonIcon = styled.button`
   background-image: url(${({ icon }) => icon});
   background-repeat: no-repeat;
   background-position: center center;
+  margin: 0 40px;
   background-size: ${({ plus }) => (plus ? '30%' : '55%')};
   border: none;
   box-shadow: ${({ plus }) => (plus ? '0 3px 10px rgba(0,0,0,.3)' : 'none')};
