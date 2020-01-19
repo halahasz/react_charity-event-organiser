@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import Heading from 'components/atoms/Heading/Heading';
 import settingsIcon from 'assets/icons/settings.svg';
 import logoutIcon from 'assets/icons/logout.svg';
 import usersIcon from 'assets/icons/users.svg';
+import peopleIcon from 'assets/icons/people.png';
+import waitressIcon from 'assets/icons/waitress.png';
+import kitchenIcon from 'assets/icons/kitchen.png';
+import logisticsIcon from 'assets/icons/logistics.png';
+import cleaningIcon from 'assets/icons/cleaning.png';
 
 const UpperHeader = styled.div`
   height: 40px;
@@ -19,7 +25,7 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
 `;
 const Logo = styled.h1`
-  font-size: 19px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 `;
@@ -59,10 +65,29 @@ const Header = () => {
       </UpperHeader>
       <BottomHeader>
         <HeaderContainer>
-          <UsersIcon active icon={usersIcon} />
           <IconsContainer>
-            <SettingsIcon active icon={settingsIcon} />
-            <SettingsIcon active icon={logoutIcon} />
+            <UsersIcon active icon={usersIcon} />
+            <Heading>68</Heading>
+            <p style={{ marginLeft: '10px' }}>volunteers</p>
+          </IconsContainer>
+          <IconsContainer>
+            <ButtonIcon color={({ theme }) => theme.social} icon={peopleIcon} />
+            <ButtonIcon
+              color={({ theme }) => theme.waitress}
+              icon={waitressIcon}
+            />
+            <ButtonIcon
+              color={({ theme }) => theme.kitchen}
+              icon={kitchenIcon}
+            />
+            <ButtonIcon
+              color={({ theme }) => theme.logistics}
+              icon={logisticsIcon}
+            />
+            <ButtonIcon
+              color={({ theme }) => theme.cleaning}
+              icon={cleaningIcon}
+            />
           </IconsContainer>
         </HeaderContainer>
       </BottomHeader>
