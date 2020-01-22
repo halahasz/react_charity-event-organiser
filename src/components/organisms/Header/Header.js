@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import Heading from 'components/atoms/Heading/Heading';
 import settingsIcon from 'assets/icons/settings.svg';
@@ -47,10 +49,11 @@ const UsersIcon = styled(ButtonIcon)`
 `;
 const BottomHeader = styled.div`
   height: 40px;
+  background-color: ${({ activeColor, theme }) => theme[activeColor]};
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 `;
 
-const Header = () => {
+const Header = ({ sectionType }) => {
   return (
     <>
       <UpperHeader>
@@ -63,7 +66,7 @@ const Header = () => {
           </IconsContainer>
         </HeaderContainer>
       </UpperHeader>
-      <BottomHeader>
+      <BottomHeader activeColor={sectionType}>
         <HeaderContainer>
           <IconsContainer>
             <UsersIcon active icon={usersIcon} />
@@ -71,20 +74,38 @@ const Header = () => {
             <p style={{ marginLeft: '10px' }}>volunteers</p>
           </IconsContainer>
           <IconsContainer>
-            <ButtonIcon color={({ theme }) => theme.social} icon={peopleIcon} />
             <ButtonIcon
+              as={NavLink}
+              activeclass="active"
+              to="/social"
+              color={({ theme }) => theme.social}
+              icon={peopleIcon}
+            />
+            <ButtonIcon
+              as={NavLink}
+              activeclass="active"
+              to="/waitress"
               color={({ theme }) => theme.waitress}
               icon={waitressIcon}
             />
             <ButtonIcon
+              as={NavLink}
+              activeclass="active"
+              to="/kitchen"
               color={({ theme }) => theme.kitchen}
               icon={kitchenIcon}
             />
             <ButtonIcon
+              as={NavLink}
+              activeclass="active"
+              to="/logistics"
               color={({ theme }) => theme.logistics}
               icon={logisticsIcon}
             />
             <ButtonIcon
+              as={NavLink}
+              activeclass="active"
+              to="/cleaning"
               color={({ theme }) => theme.cleaning}
               icon={cleaningIcon}
             />
@@ -93,6 +114,10 @@ const Header = () => {
       </BottomHeader>
     </>
   );
+};
+
+Header.propTypes = {
+  sectionType: PropTypes.element.isRequired,
 };
 
 export default Header;

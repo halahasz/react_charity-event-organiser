@@ -4,13 +4,14 @@ import MainTemplate from 'templates/MainTemplate';
 import All from 'views/All';
 
 const Root = () => (
-  <MainTemplate>
-    <BrowserRouter>
+  <BrowserRouter>
+    <MainTemplate>
       <Switch>
         <Route exact path="/" component={All} />
+        <Route exact path="/social" component={All} />
       </Switch>
-    </BrowserRouter>
-  </MainTemplate>
+    </MainTemplate>
+  </BrowserRouter>
 );
 
 export default Root;

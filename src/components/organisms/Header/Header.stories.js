@@ -1,11 +1,8 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
+import StoryRouter from 'storybook-react-router';
 import Header from './Header';
 
-export default {
-  component: Header,
-  title: 'Header',
-};
-
-export const primaryHeader = () => {
-  return <Header />;
-};
+storiesOf('Header', module)
+  .addDecorator(StoryRouter())
+  .add('Normal', () => <Header />);
