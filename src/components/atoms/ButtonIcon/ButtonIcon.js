@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const ButtonIcon = styled.button`
+  cursor: pointer;
   display: block;
   width: ${({ edit }) => (edit ? '24px' : '30px')};
   height: ${({ edit }) => (edit ? '24px' : '30px')};

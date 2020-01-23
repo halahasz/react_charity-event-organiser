@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 1.4rem;
     font-family: 'Open Sans', sans-serif;
+    background-color: #F7F7F7;
   }
 `;
 

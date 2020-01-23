@@ -1,9 +1,12 @@
 import React from 'react';
 import UserPageTemplate from 'templates/UserPageTemplate';
+import Card from 'components/molecules/Card/Card';
 
 const All = () => (
   <UserPageTemplate>
-    <h1>All view</h1>
+    <Card />
+    <Card />
+    <Card />
   </UserPageTemplate>
 );
 

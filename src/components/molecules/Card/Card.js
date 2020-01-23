@@ -6,7 +6,9 @@ import editIcon from 'assets/icons/edit.svg';
 import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  margin-bottom: 3px;
   display: flex;
   align-items: center;
 `;
@@ -34,13 +36,18 @@ const Card = ({ sectionType }) => (
   <StyledWrapper>
     <Avatar />
     <BreakLine activeColor={sectionType} />
-    <Paragraph>Louis Stanley</Paragraph>
+    <Paragraph style={{ width: '20%' }}>Louis Stanley</Paragraph>
     <BreakLine activeColor={sectionType} />
-    <Paragraph>L.starley@example.com</Paragraph>
+    <Paragraph style={{ width: '35%' }}>L.starley@example.com</Paragraph>
     <BreakLine activeColor={sectionType} />
-    <Paragraph>social</Paragraph>
+    <Paragraph style={{ width: '12%' }}>social</Paragraph>
     <BreakLine activeColor={sectionType} />
-    <ButtonIcon edit icon={editIcon} color={({ theme }) => theme.edit} />
+    <ButtonIcon
+      style={{ margin: '0 30px' }}
+      edit
+      icon={editIcon}
+      color={({ theme }) => theme.edit}
+    />
   </StyledWrapper>
 );
 

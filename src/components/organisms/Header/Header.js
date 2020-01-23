@@ -37,7 +37,7 @@ const IconsContainer = styled.div`
 `;
 const Login = styled.p`
   margin-right: 40px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
 `;
 const SettingsIcon = styled(ButtonIcon)`
