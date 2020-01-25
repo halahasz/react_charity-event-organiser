@@ -4,9 +4,9 @@ import Card from 'components/molecules/Card/Card';
 
 const All = () => (
   <UserPageTemplate>
-    <Card />
-    <Card />
-    <Card />
+    <Card name="Louis Stanley" email="L.starley@example.com" section="social" />
+    <Card name="Louis Stanley" email="L.starley@example.com" section="social" />
+    <Card name="Louis Stanley" email="L.starley@example.com" section="social" />
   </UserPageTemplate>
 );
 

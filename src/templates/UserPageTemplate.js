@@ -43,7 +43,7 @@ const UserPageTemplate = ({ children, sectionType }) => {
           <Header sectionType={sectionType} />
           <StyledButtonIcon plus color={theme.plus} icon={plusIcon} />
           <CardWrapper>
-            <H1>All Volunteers</H1>
+            <H1 as="h1">All Volunteers</H1>
             <CardsHead>
               <p style={{ margin: '0 40px', color: '#5F5F5F' }}>photo</p>
               <p

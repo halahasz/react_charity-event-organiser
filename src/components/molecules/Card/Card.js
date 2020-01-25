@@ -32,15 +32,15 @@ const Paragraph = styled.p`
   font-size: 14px;
 `;
 
-const Card = ({ sectionType }) => (
+const Card = ({ sectionType, name, email, section }) => (
   <StyledWrapper>
     <Avatar />
     <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '20%' }}>Louis Stanley</Paragraph>
+    <Paragraph style={{ width: '20%' }}>{name}</Paragraph>
     <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '35%' }}>L.starley@example.com</Paragraph>
+    <Paragraph style={{ width: '35%' }}>{email}</Paragraph>
     <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '12%' }}>social</Paragraph>
+    <Paragraph style={{ width: '12%' }}>{section}</Paragraph>
     <BreakLine activeColor={sectionType} />
     <ButtonIcon
       style={{ margin: '0 30px' }}
@@ -59,6 +59,9 @@ Card.propTypes = {
     'kitchen',
     'cleaning',
   ]),
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  section: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
