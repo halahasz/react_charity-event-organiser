@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import { Redirect } from 'react-router-dom';
 import Avatar1 from 'assets/avatars/1.jpg';
 import editIcon from 'assets/icons/edit.svg';
 import PropTypes from 'prop-types';
@@ -32,24 +33,40 @@ const Paragraph = styled.p`
   font-size: 14px;
 `;
 
-const Card = ({ sectionType, name, email, section }) => (
-  <StyledWrapper>
-    <Avatar />
-    <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '20%' }}>{name}</Paragraph>
-    <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '35%' }}>{email}</Paragraph>
-    <BreakLine activeColor={sectionType} />
-    <Paragraph style={{ width: '12%' }}>{section}</Paragraph>
-    <BreakLine activeColor={sectionType} />
-    <ButtonIcon
-      style={{ margin: '0 30px' }}
-      edit
-      icon={editIcon}
-      color={({ theme }) => theme.edit}
-    />
-  </StyledWrapper>
-);
+class Card extends Component {
+  state = {
+    redirect: false,
+  };
+
+  handleCardClick = () => this.setState({ redirect: true });
+
+  render() {
+    const { id, sectionType, name, email, section } = this.props;
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={`${sectionType}/${id}`} />;
+    }
+    return (
+      <StyledWrapper>
+        <Avatar />
+        <BreakLine activeColor={sectionType} />
+        <Paragraph style={{ width: '20%' }}>{name}</Paragraph>
+        <BreakLine activeColor={sectionType} />
+        <Paragraph style={{ width: '35%' }}>{email}</Paragraph>
+        <BreakLine activeColor={sectionType} />
+        <Paragraph style={{ width: '12%' }}>{section}</Paragraph>
+        <BreakLine activeColor={sectionType} />
+        <ButtonIcon
+          onClick={this.handleCardClick}
+          style={{ margin: '0 30px' }}
+          edit
+          icon={editIcon}
+          color={({ theme }) => theme.edit}
+        />
+      </StyledWrapper>
+    );
+  }
+}
 
 Card.propTypes = {
   sectionType: PropTypes.oneOf([
@@ -60,6 +77,7 @@ Card.propTypes = {
     'cleaning',
   ]),
   name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   email: PropTypes.string.isRequired,
   section: PropTypes.string.isRequired,
 };
